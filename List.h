@@ -4,21 +4,21 @@
 
 static int regulatingValue = -1;
 
-class List : public Graph{
+class List : public Graph {
 	Edge* inEdge;
 
 public:
-	const Edge* GetEdge() 
-	{ 
-		return this->inEdge; 
+	const Edge* GetEdge()
+	{
+		return this->inEdge;
 	}
 
 	void FillGraph(const bool allowLoops) const override;
 	void PrintGraph() const override;
 	const int RFile(const std::string fName)  override;
 	void CreateInput(const int startNode) const override;
-	
-	void AddEdge(int nodeStart,int nodeEnd,int value,int whereflag) const ;
+
+	void AddEdge(int nodeStart, int nodeEnd, int value, int whereflag) const;
 	bool IsExisting(int nodeStart, int nodeEnd) const;
 
 	~List() { delete[] inEdge; }

@@ -9,7 +9,7 @@
 #include "Edge.h"
 
 class Graph {
-protected: 
+protected:
 	int mAmOfNodes;
 	int mAmOfEdges;
 	double mDensity;
@@ -20,14 +20,14 @@ public:
 		return this->mAmOfNodes;
 	}
 
-	const int GetEdges() 
+	const int GetEdges()
 	{
 		return this->mAmOfEdges;
 	}
 
 	virtual void FillGraph(const bool allowLoops) const = 0;
 	virtual void PrintGraph() const = 0;
-	virtual const int RFile(const std::string fileName)  = 0;
+	virtual const int RFile(const std::string fileName) = 0;
 	virtual void CreateInput(const int startNode) const = 0;
 
 	virtual ~Graph() {};

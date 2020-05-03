@@ -17,10 +17,10 @@ public:
 	void CreateInput(const int startNode) const override;
 
 	const int getValue(int one, int two) const
-	{ 
-		return this->matrix[one][two]; 
+	{
+		return this->matrix[one][two];
 	}
-	
+
 	Matrix(int nodesAmount, double density);
 	Matrix() : Graph() {};
 };

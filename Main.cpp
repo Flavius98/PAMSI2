@@ -4,10 +4,10 @@
 #include "Bellmanalg.h"
 
 template<typename T>
-std::string Driver(int(&verticlesStorage)[5],double(&densityStorage)[4],int loops)
+std::string Driver(int(&verticlesStorage)[5], double(&densityStorage)[4], int loops)
 {
 	std::string result;
-	for (auto density:densityStorage)
+	for (auto density : densityStorage)
 	{
 		for (auto verticles : verticlesStorage)
 		{
@@ -21,10 +21,10 @@ std::string Driver(int(&verticlesStorage)[5],double(&densityStorage)[4],int loop
 
 				accumulatedTime += BellmanAlg(std::move(graph), startingNode);
 			}
-			
-			result+=std::to_string((accumulatedTime * 100 / loops) + 1);
+
+			result += std::to_string((accumulatedTime * 100 / loops) + 1);
 			result += ",";
-			
+
 			std::cout << verticles << " verticles done " << std::endl;
 		}
 		std::cout << density << " density done " << std::endl;
@@ -34,7 +34,7 @@ std::string Driver(int(&verticlesStorage)[5],double(&densityStorage)[4],int loop
 int main()
 {
 	int verticesStorage[5] = { 5,10,30,50,100 };
-	double densityStorage[4] = { 0.25,0.5,0.75,1.00 }; 
+	double densityStorage[4] = { 0.25,0.5,0.75,1.00 };
 	int loop = 100;
 
 	std::ofstream file("Times.txt");
@@ -44,14 +44,14 @@ int main()
 		return 1;
 	}
 
-	file<<Driver<List>(verticesStorage, densityStorage, loop); 
+	file << Driver<List>(verticesStorage, densityStorage, loop);
 	std::cout << "LIST DONE\n" << std::endl;
 	std::cout << " ";
-	file<<Driver<Matrix>(verticesStorage, densityStorage, loop);	
+	file << Driver<Matrix>(verticesStorage, densityStorage, loop);
 	std::cout << "MATRIX DONE" << std::endl;
 
 	file.close();
 	return 0;
 
-	
+
 }
