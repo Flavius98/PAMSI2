@@ -32,4 +32,5 @@ public:
 
 	virtual ~Graph() {};
 	Graph(int inAmOfNodes, int inAmOfEdges, double inDensity) : mAmOfNodes(inAmOfNodes), mAmOfEdges(inAmOfEdges), mDensity(inDensity) {};
+	Graph() {};
 };

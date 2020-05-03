@@ -125,6 +125,7 @@ void Results(std::string pathString[], int distStorage[], int nodesAmount, int s
 	std::cout << "Starting node was : " << startingNode << std::endl;
 	ResultsFile << "\n           Results            \n\n";
 	ResultsFile << "Starting node was : " << startingNode << std::endl;
+
 	for (int itrNodes = 0; itrNodes < nodesAmount; itrNodes++)
 	{
 		if (distStorage[itrNodes] == infinity)

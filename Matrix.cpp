@@ -16,7 +16,6 @@ Matrix::Matrix(int nodesAmount, double density) : Graph(nodesAmount, static_cast
 				matrix[iterNodesCell][iterNodesCollumn] = infinity;
 		}
 	}
-
 }
 
 const int Matrix::RFile(const std::string fileName)

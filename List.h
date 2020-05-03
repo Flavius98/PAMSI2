@@ -22,6 +22,7 @@ public:
 	bool IsExisting(int nodeStart, int nodeEnd) const;
 
 	~List() { delete[] inEdge; }
+	List() : Graph() {};
 	List(int inAmOfNodes, int inDensity) : Graph(inAmOfNodes, inDensity* inAmOfNodes* (inAmOfNodes - 1), inDensity), inEdge(new Edge[inDensity * inAmOfNodes * (inAmOfNodes - 1)]) {}
 };
 

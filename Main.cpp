@@ -42,6 +42,13 @@ int main()
 
 	std::ofstream file("Times.txt");
 
+	if (!file.is_open()) 
+	{
+		std::cerr << "output not open" << std::endl;
+	
+		return 1;
+	}
+
 	file << Driver<List>(vertStorage, denStorage, loop);
 	std::cout << "LIST DONE\n" << std::endl;
 	std::cout << " ";
