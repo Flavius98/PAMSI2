@@ -1,6 +1,6 @@
 #pragma once
 
-#include<memory>
+#include <memory>
 
 #include "Graph.h"
 
@@ -11,16 +11,17 @@ class Matrix : public Graph {
 	std::unique_ptr<std::unique_ptr<int[]>[]> matrix;
 
 public:
-	const int RFile(const std::string fName) override;
-	void CreateInput(const int startNode) const override;
 	void FillGraph(const bool allowLoops) const override;
 	void PrintGraph() const override;
+	const int RFile(const std::string fName) override;
+	void CreateInput(const int startNode) const override;
 
-	const int GetVal(int one, int two) const 
+	const int getValue(int one, int two) const
 	{ 
 		return this->matrix[one][two]; 
 	}
-
+	
 	Matrix(int nodesAmount, double density);
 	Matrix() : Graph() {};
 };
+
